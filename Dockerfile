@@ -5,8 +5,8 @@ RUN apt-get -y upgrade
 RUN apt-get -y install python3 python3-setuptools python3-pip gunicorn3
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 COPY virt-assn1-app /flaskapp
-WORKDIR /flaskapp/virt-assn1-app
+WORKDIR /flaskapp/
 RUN pip3 install -r requirements.txt
 EXPOSE 5000
 
-CMD "bash startup.sh"
+CMD "bash /flaskapp/startup.sh"
