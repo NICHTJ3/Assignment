@@ -10,7 +10,7 @@ redis.set('no_one', 0)
 @application.route("/")
 def hello():
     return render_template('form.html')
-    
+
 
 @application.route("/vote", methods=['GET', 'POST'])
 def vote():
@@ -22,8 +22,6 @@ def vote():
     no_votes = redis.get('no')
     correct_votes = redis.get('no_one')
     return render_template('results.html', yes_votes=yes_votes, no_votes=no_votes, correct_votes=correct_votes)
-
-        
 
 
 
